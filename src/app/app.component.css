@@ -1,0 +1,22 @@
+nz-content {
+  margin: 24px;
+}
+.app-layout {
+  height: 100vh;
+}
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+.inner-content {
+  background: #fff;
+  height: 100%;
+}
+.header-menu {
+  line-height: 64px;
+}
+.logo {
+  padding: 5px;
+}
