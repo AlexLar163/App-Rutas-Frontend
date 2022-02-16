@@ -1,0 +1,50 @@
+.information {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 250px);
+  margin-bottom: 30px;
+  /* background-image: url("../../../../assets/information-image.jpg"); */
+  background-image: radial-gradient(
+      circle,
+      #524d4d7c 0%,
+      #000000c4 50%,
+      #000000 100%
+    ),
+    url("../../../../assets/main-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.information--slogan {
+  flex: 1;
+}
+.information--slogan__title {
+  margin-left: 20px;
+  color: rgba(255, 255, 255, 0.822);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.329);
+}
+.information--slogan__title > span {
+  color: #f5d24b;
+  font-weight: bolder;
+}
+.information--items {
+  flex: 1;
+
+  margin-right: 20px;
+  list-style: none;
+}
+.information--items > li > h1 {
+  color: #f5d24b;
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: bold;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.329);
+}

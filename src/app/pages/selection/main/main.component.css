@@ -1,4 +1,66 @@
-.img-responsive {
-  height: 100%;
-  margin: 0;
+.main {
+  width: 100%;
+  height: calc(100vh - 64px);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-image: linear-gradient(to left, #000000b4 0%,#524d4d7c 50%, #000000a9 100%),url("../../../../assets/main-image.jpg"); */
+  background-image: linear-gradient(
+      to left,
+      #000000b4 0%,
+      #524d4d7c 50%,
+      #000000a9 100%
+    ),
+    url("https://i0.wp.com/freeman.la/wp-content/uploads/2018/12/Senderismo.jpg");
+}
+
+@keyframes example {
+  from {
+    bottom: 15%;
+    opacity: 0.1;
+  }
+  to {
+    bottom: 5%;
+    opacity: 1;
+  }
+}
+
+.main--slogan {
+  position: absolute;
+  right: 30%;
+  bottom: 5%;
+  margin: 0 20px;
+  color: rgba(255, 255, 255, 0.822);
+  font-size: 3.5rem;
+  font-weight: normal;
+  text-transform: uppercase;
+
+  animation-name: example;
+  animation-duration: 1s;
+
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.329);
+}
+.main--slogan > span {
+  color: #f5d24b;
+  font-weight: bold;
+}
+.cards__title {
+  margin: 30px;
+}
+.cards {
+  margin: 30px;
+  overflow: auto;
+  white-space: nowrap;
+}
+.cards__list {
+  margin-bottom: 20px;
+}
+.cards__list > div {
+  display: inline-block;
+  margin-right: 20px;
+}
+.cards__list > div:last-child {
+  margin-right: 0;
 }

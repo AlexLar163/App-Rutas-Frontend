@@ -15,14 +15,14 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { SelectionComponent } from './pages/selection/selection.component';
+import { SelectionModule } from './pages/selection/selection.module';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 registerLocaleData(es);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,9 +32,10 @@ registerLocaleData(es);
     IconsProviderModule,
     NzLayoutModule,
     NzMenuModule,
-    NzButtonModule
+    NzButtonModule,
+    SelectionModule
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

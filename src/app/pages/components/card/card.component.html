@@ -1,0 +1,30 @@
+<nz-card
+  nzHoverable
+  style="width: 340px"
+  [nzCover]="coverTemplate"
+  class="card--description"
+>
+  <nz-card-meta
+    nzTitle="Europe Street beat"
+    nzDescription="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+  ></nz-card-meta>
+  <p nz-typography class="card--dificult1">Dificultad</p>
+  <nz-rate
+    nzAllowHalf
+    nzAllowClear
+    [ngModel]="2.5"
+    [nzDisabled]="true"
+    class="card--rate"
+  ></nz-rate>
+  <div class="card-stats">
+    <p nz-typography nzType="secondary">Distancia: 10.4km</p>
+    <nz-divider nzType="vertical"></nz-divider>
+    <p nz-typography nzType="secondary">Duracion: 1h</p>
+  </div>
+</nz-card>
+<ng-template #coverTemplate>
+  <img
+    alt="example"
+    src="https://cdn.pixabay.com/photo/2022/01/30/19/46/school-6982073_960_720.jpg"
+  />
+</ng-template>

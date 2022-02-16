@@ -1,1 +1,16 @@
-<p>main works!</p>
+<div>
+  <div class="main">
+    <h1 class="main--slogan" nz-typography>
+      Elige las rutas que deseas <span>recorrer</span>.
+    </h1>
+  </div>
+  <h2 nz-typography class="cards__title">Rutas frecuentes</h2>
+  <div class="cards">
+    <div class="cards__list">
+      <div *ngFor="let item of data">
+        <app-card></app-card>
+      </div>
+    </div>
+  </div>
+  <app-information></app-information>
+</div>
