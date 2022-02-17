@@ -1,1 +1,32 @@
-<p>rutes works!</p>
+<div class="rutas">
+  <div class="rutas--grid">
+    <h1 nz-typography>Facil</h1>
+    <div class="cards">
+      <div class="cards__list">
+        <div *ngFor="let item of data">
+          <app-card></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rutas--grid">
+    <h1 nz-typography>Normal</h1>
+    <div class="cards">
+      <div class="cards__list">
+        <div *ngFor="let item of data">
+          <app-card></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rutas--grid">
+    <h1 nz-typography>Dificil</h1>
+    <div class="cards">
+      <div class="cards__list">
+        <div *ngFor="let item of data">
+          <app-card></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

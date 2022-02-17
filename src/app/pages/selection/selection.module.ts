@@ -15,6 +15,10 @@ import { CardComponent } from '../components/card/card.component';
 import { FormsModule } from '@angular/forms';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { InformationComponent } from '../components/information/information.component';
+import { RutesComponent } from './rutes/rutes.component';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { SearchComponent } from './search/search.component';
+import { NzInputModule } from 'ng-zorro-antd/input';
 @NgModule({
   declarations: [
     SelectionComponent,
@@ -23,6 +27,8 @@ import { InformationComponent } from '../components/information/information.comp
     FooterComponent,
     CardComponent,
     InformationComponent,
+    RutesComponent,
+    SearchComponent,
   ],
   imports: [
     FormsModule,
@@ -34,6 +40,8 @@ import { InformationComponent } from '../components/information/information.comp
     NzCardModule,
     NzRateModule,
     NzDividerModule,
+    NzFormModule,
+    NzInputModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })

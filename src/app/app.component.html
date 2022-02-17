@@ -1,27 +1,98 @@
 <nz-layout class="app--layout">
   <nz-header class="app--header">
-    <img src="../assets/logo.png" alt="logo.png" class="logo" />
-    <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-      <li nz-menu-item nzMatchRouter nzSelected>
+    <img class="logo" src="../assets/logo.png" alt="logo.png" />
+    <ul class="header--navbar" nz-menu nzTheme="dark" nzMode="horizontal">
+      <li class="header--navbar__item" nz-menu-item nzMatchRouter nzSelected>
         <a routerLink="/main">Inicio</a>
       </li>
-      <li nz-menu-item nzMatchRouter>
+      <li class="header--navbar__item" nz-menu-item nzMatchRouter>
         <a routerLink="/rutes">Rutas</a>
       </li>
-      <li nz-menu-item nzMatchRouter>
+      <li class="header--navbar__item" nz-menu-item nzMatchRouter>
         <a routerLink="/search">Buscar</a>
       </li>
-      <li nz-menu-item nzMatchRouter [hidden]="true">
+      <li
+        class="header--navbar__item"
+        nz-menu-item
+        nzMatchRouter
+        [hidden]="true"
+      >
         <a routerLink="/myrutes">Mis rutas</a>
       </li>
-      <li nz-menu-item nzMatchRouterng [hidden]="true">
-        <a routerLink="/myrutes">Ingresar</a>
+      <li
+        class="header--navbar__item"
+        nz-menu-item
+        nzMatchRouter
+        [hidden]="false"
+        nz-button
+        nz-dropdown
+        [nzDropdownMenu]="menu"
+      >
+        Ingreso
       </li>
-      <li nz-menu-item nzMatchRouterng [hidden]="false">
-        <a routerLink="/myrutes">Registrarse</a>
+      <li
+        class="header--navbar__item"
+        nz-menu-item
+        nzMatchRouterng
+        [hidden]="true"
+      >
+        <a routerLink="/myrutes">Salir</a>
       </li>
     </ul>
+    <nz-dropdown-menu class="dropdown" #menu="nzDropdownMenu">
+      <ul nz-menu class="dropdown--menu">
+        <li class="dropdown--menu__item" nz-menu-item (click)="showModal(1)">
+          Register
+        </li>
+        <li class="dropdown--menu__item" nz-menu-item (click)="showModal(2)">
+          Login
+        </li>
+      </ul>
+    </nz-dropdown-menu>
   </nz-header>
+  <nz-modal
+    [(nzVisible)]="isVisible"
+    nzTitle="Ingreso"
+    (nzOnCancel)="handleCancel()"
+    (nzOnOk)="handleOk()"
+  >
+    <ng-container *nzModalContent>
+      <form nz-form [hidden]="isLogin">
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="username">Username</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input name="userName" type="userName" id="userName" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input name="password" type="password" id="password" />
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+      <form nz-form [hidden]="isRegister" class="form">
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="username">Username</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input name="userName" type="userName" id="userName" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input name="password" type="password" id="password" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input name="email" type="email" id="email" />
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </ng-container>
+  </nz-modal>
   <nz-content>
     <div class="inner--content">
       <router-outlet></router-outlet>

@@ -1,1 +1,28 @@
-<p>search works!</p>
+<div class="search">
+  <div class="search--input">
+    <nz-input-group
+      class="search--input__text"
+      nzSearch
+      nzSize="large"
+      [nzAddOnAfter]="suffixButton"
+    >
+      <input
+        class="text--search"
+        type="text"
+        nz-input
+        placeholder="Ingrese palabras clave"
+      />
+    </nz-input-group>
+    <ng-template class="search--input__button" #suffixButton>
+      <button
+        class="button--search"
+        nz-button
+        nzType="primary"
+        nzSize="large"
+        nzSearch
+      >
+        Buscar
+      </button>
+    </ng-template>
+  </div>
+</div>

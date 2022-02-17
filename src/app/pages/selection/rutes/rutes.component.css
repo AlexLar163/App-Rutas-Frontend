@@ -1,0 +1,18 @@
+.rutas--grid > h1 {
+  text-align: center;
+}
+.cards {
+  margin: 30px;
+  overflow: auto;
+  white-space: nowrap;
+}
+.cards__list {
+  margin-bottom: 20px;
+}
+.cards__list > div {
+  display: inline-block;
+  margin-right: 20px;
+}
+.cards__list > div:last-child {
+  margin-right: 0;
+}

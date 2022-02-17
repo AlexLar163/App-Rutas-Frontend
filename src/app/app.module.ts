@@ -13,16 +13,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzFormModule } from 'ng-zorro-antd/form';
 import { SelectionModule } from './pages/selection/selection.module';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-
+import { RuteDetailComponent } from './pages/rute-detail/rute-detail.component';
 registerLocaleData(es);
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, RuteDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,7 +35,10 @@ registerLocaleData(es);
     NzLayoutModule,
     NzMenuModule,
     NzButtonModule,
-    SelectionModule
+    SelectionModule,
+    NzDropDownModule,
+    NzModalModule,
+    NzFormModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent],

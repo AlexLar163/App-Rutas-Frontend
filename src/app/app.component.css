@@ -10,7 +10,21 @@
   padding: 5px;
   width: 70px;
 }
-.app--footer{
+.app--footer {
   background-color: #001529;
   padding: 0;
+}
+.dropdown--menu__item {
+  font-size: 16px;
+  padding: 20px 30px;
+}
+.header--navbar__item {
+  font-size: 18px;
+  font-weight: bold;
+}
+.form--item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
