@@ -1,0 +1,58 @@
+.route--logo {
+  display: block;
+  width: 50%;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.route--info {
+  display: block;
+  width: 75%;
+  padding: 20px auto;
+  margin: 0 auto;
+}
+
+.route--info {
+  display: block;
+  width: 75%;
+  padding: 20px auto;
+  margin: 0 auto;
+}
+.route--detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.route--description__dificulty {
+  border-radius: 20px 0 0 20px;
+  flex: 1;
+  text-align: center;
+  background-color: #001529;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.route--description__distance {
+  flex: 1;
+  text-align: center;
+  background-color: #2C8C99;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.route--description__location {
+  flex: 1;
+  text-align: center;
+  background-color: #001529;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+  border-radius: 0 20px 20px 0;
+}

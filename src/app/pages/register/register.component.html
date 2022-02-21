@@ -1,1 +1,41 @@
-<p>register works!</p>
+<form nz-form class="form">
+  <nz-form-item class="form--item">
+    <nz-form-label [nzSpan]="6" nzFor="username">Username</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input
+        nz-input
+        name="userName"
+        type="userName"
+        id="userName"
+        [ngModel]="username"
+        (ngModelChange)="handleUsername($event)"
+      />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item class="form--item">
+    <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input
+        nz-input
+        name="password"
+        type="password"
+        id="password"
+        [ngModel]="password"
+        (ngModelChange)="handlePassword($event)"
+      />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item class="form--item">
+    <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input
+        nz-input
+        name="email"
+        type="email"
+        id="email"
+        [ngModel]="email"
+        (ngModelChange)="handleEmail($event)"
+      />
+    </nz-form-control>
+  </nz-form-item>
+</form>

@@ -19,6 +19,9 @@ import { RutesComponent } from './rutes/rutes.component';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { SearchComponent } from './search/search.component';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { RuteDetailComponent } from './rute-detail/rute-detail.component';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+
 @NgModule({
   declarations: [
     SelectionComponent,
@@ -29,6 +32,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
     InformationComponent,
     RutesComponent,
     SearchComponent,
+    RuteDetailComponent,
   ],
   imports: [
     FormsModule,
@@ -41,6 +45,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
     NzRateModule,
     NzDividerModule,
     NzFormModule,
+    NzModalModule,
     NzInputModule,
   ],
   exports: [HeaderComponent, FooterComponent],

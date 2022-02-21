@@ -42,56 +42,115 @@
     <nz-dropdown-menu class="dropdown" #menu="nzDropdownMenu">
       <ul nz-menu class="dropdown--menu">
         <li class="dropdown--menu__item" nz-menu-item (click)="showModal(1)">
-          Register
+          Login
         </li>
         <li class="dropdown--menu__item" nz-menu-item (click)="showModal(2)">
-          Login
+          Register
         </li>
       </ul>
     </nz-dropdown-menu>
   </nz-header>
+
   <nz-modal
     [(nzVisible)]="isVisible"
     nzTitle="Ingreso"
     (nzOnCancel)="handleCancel()"
     (nzOnOk)="handleOk()"
   >
-    <ng-container *nzModalContent>
-      <form nz-form [hidden]="isLogin">
-        <nz-form-item class="form--item">
-          <nz-form-label [nzSpan]="6" nzFor="username">Username</nz-form-label>
-          <nz-form-control [nzSpan]="14">
-            <input nz-input name="userName" type="userName" id="userName" />
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item class="form--item">
-          <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
-          <nz-form-control [nzSpan]="14">
-            <input nz-input name="password" type="password" id="password" />
-          </nz-form-control>
-        </nz-form-item>
-      </form>
-      <form nz-form [hidden]="isRegister" class="form">
-        <nz-form-item class="form--item">
-          <nz-form-label [nzSpan]="6" nzFor="username">Username</nz-form-label>
-          <nz-form-control [nzSpan]="14">
-            <input nz-input name="userName" type="userName" id="userName" />
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item class="form--item">
-          <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
-          <nz-form-control [nzSpan]="14">
-            <input nz-input name="password" type="password" id="password" />
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item class="form--item">
-          <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
-          <nz-form-control [nzSpan]="14">
-            <input nz-input name="email" type="email" id="email" />
-          </nz-form-control>
-        </nz-form-item>
-      </form>
+    <ng-container *nzModalContent
+      ><div [hidden]="!isLogin">
+        <!-- <app-login></app-login> -->
+        <form nz-form>
+          <nz-form-item class="form--item">
+            <nz-form-label [nzSpan]="6" nzFor="username"
+              >Username</nz-form-label
+            >
+            <nz-form-control [nzSpan]="14">
+              <input
+                nz-input
+                name="userName"
+                type="userName"
+                id="userName"
+                [ngModel]="username"
+                (ngModelChange)="handleUsername($event)"
+              />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item class="form--item">
+            <nz-form-label [nzSpan]="6" nzFor="password"
+              >Password</nz-form-label
+            >
+            <nz-form-control [nzSpan]="14">
+              <input
+                nz-input
+                name="password"
+                type="password"
+                id="password"
+                [ngModel]="password"
+                (ngModelChange)="handlePassword($event)"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </div>
+      <div [hidden]="!isRegister">
+        <!-- <app-register></app-register> -->
+        <form nz-form class="form">
+          <nz-form-item class="form--item">
+            <nz-form-label [nzSpan]="6" nzFor="username">Username</nz-form-label>
+            <nz-form-control [nzSpan]="14">
+              <input
+                nz-input
+                name="username"
+                type="username"
+                id="username"
+                [ngModel]="username"
+                (ngModelChange)="handleUsername($event)"
+              />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item class="form--item">
+            <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
+            <nz-form-control [nzSpan]="14">
+              <input
+                nz-input
+                name="password"
+                type="password"
+                id="password"
+                [ngModel]="password"
+                (ngModelChange)="handlePassword($event)"
+              />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item class="form--item">
+            <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
+            <nz-form-control [nzSpan]="14">
+              <input
+                nz-input
+                name="email"
+                type="email"
+                id="email"
+                [ngModel]="email"
+                (ngModelChange)="handleEmail($event)"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </div>
     </ng-container>
+    <div *nzModalFooter>
+      <button nz-button nzType="default" (click)="handleCancel()">
+        Custom Callback
+      </button>
+      <button
+        nz-button
+        nzType="primary"
+        (click)="handleOk()"
+        [nzLoading]="isConfirmLoading"
+      >
+        Custom Submit
+      </button>
+    </div>
   </nz-modal>
   <nz-content>
     <div class="inner--content">

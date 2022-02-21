@@ -3,6 +3,8 @@
   style="width: 340px"
   [nzCover]="coverTemplate"
   class="card--description"
+  (click)="handleCardClick()"
+  routerLink="/rute-detail"
 >
   <nz-card-meta
     nzTitle="Europe Street beat"

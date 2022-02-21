@@ -20,11 +20,10 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { SelectionModule } from './pages/selection/selection.module';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { RuteDetailComponent } from './pages/rute-detail/rute-detail.component';
 registerLocaleData(es);
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, RuteDetailComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

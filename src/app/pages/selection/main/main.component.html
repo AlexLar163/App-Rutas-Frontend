@@ -8,7 +8,9 @@
   <div class="cards">
     <div class="cards__list">
       <div *ngFor="let item of data">
-        <app-card></app-card>
+        <app-card [cardData]="item">
+          
+        </app-card>
       </div>
     </div>
   </div>

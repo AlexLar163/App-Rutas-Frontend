@@ -4,6 +4,7 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { MainComponent } from './main/main.component';
 import { MyRutesComponent } from './my-rutes/my-rutes.component';
+import { RuteDetailComponent } from './rute-detail/rute-detail.component';
 import { RutesComponent } from './rutes/rutes.component';
 import { SearchComponent } from './search/search.component';
 
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'rute-detail',
+    component: RuteDetailComponent,
   },
   {
     path: '**',

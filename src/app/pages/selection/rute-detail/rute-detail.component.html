@@ -1,0 +1,31 @@
+<div class="route">
+  <img src="{{ image }}" alt="{{ image }}" class="route--logo" />
+  <div class="route--info">
+    <h1 nz-typography class="route--description__title">{{ name }}</h1>
+    <nz-rate
+    nzAllowHalf
+    nzAllowClear
+    [ngModel]="stars"
+    [nzDisabled]="true"
+    class="card--rate"
+  ></nz-rate>
+    <p nz-typography class="route--description__description">
+      {{ description }}
+    </p>
+    <div class="route--detail">
+      <p nz-typography class="route--description__dificulty">
+        Dificultad: {{ difficulty }}
+      </p>
+      <p nz-typography class="route--description__distance">
+        Distancia: {{ distance }}
+      </p>
+      <p nz-typography class="route--description__location">
+        Ubicacion: {{ location }}
+      </p>
+    </div>
+  </div>
+  <div class="route--map">
+    <p nz-typography class="route--map__lat">{{ lat }}</p>
+    <p nz-typography class="route--map__lng">{{ lng }}</p>
+  </div>
+</div>
