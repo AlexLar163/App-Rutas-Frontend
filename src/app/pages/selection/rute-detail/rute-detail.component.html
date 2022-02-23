@@ -1,14 +1,17 @@
 <div class="route">
   <img src="{{ image }}" alt="{{ image }}" class="route--logo" />
   <div class="route--info">
+    <button nz-button nzType="primary" (click)="favorite()">
+      Aniadir a favoritos
+    </button>
     <h1 nz-typography class="route--description__title">{{ name }}</h1>
     <nz-rate
-    nzAllowHalf
-    nzAllowClear
-    [ngModel]="stars"
-    [nzDisabled]="true"
-    class="card--rate"
-  ></nz-rate>
+      nzAllowHalf
+      nzAllowClear
+      [ngModel]="stars"
+      [nzDisabled]="true"
+      class="card--rate"
+    ></nz-rate>
     <p nz-typography class="route--description__description">
       {{ description }}
     </p>
@@ -17,15 +20,13 @@
         Dificultad: {{ difficulty }}
       </p>
       <p nz-typography class="route--description__distance">
-        Distancia: {{ distance }}
+        Distancia: {{ distance }} Km
       </p>
       <p nz-typography class="route--description__location">
-        Ubicacion: {{ location }}
+        Duracion: {{ duration }} horas
       </p>
     </div>
   </div>
-  <div class="route--map">
-    <p nz-typography class="route--map__lat">{{ lat }}</p>
-    <p nz-typography class="route--map__lng">{{ lng }}</p>
-  </div>
+  <app-map
+  ></app-map>
 </div>

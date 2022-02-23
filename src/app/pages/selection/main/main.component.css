@@ -48,6 +48,9 @@
 }
 .cards__title {
   margin: 30px;
+  margin-bottom: "0.5rem";
+  color: #333;
+  text-align: center;
 }
 .cards {
   margin: 30px;

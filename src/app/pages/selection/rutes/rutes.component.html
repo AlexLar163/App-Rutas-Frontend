@@ -3,8 +3,8 @@
     <h1 nz-typography>Facil</h1>
     <div class="cards">
       <div class="cards__list">
-        <div *ngFor="let item of data">
-          <app-card></app-card>
+        <div *ngFor="let item of dataEasy">
+          <app-card [cardData]="item"> </app-card>
         </div>
       </div>
     </div>
@@ -13,8 +13,8 @@
     <h1 nz-typography>Normal</h1>
     <div class="cards">
       <div class="cards__list">
-        <div *ngFor="let item of data">
-          <app-card></app-card>
+        <div *ngFor="let item of dataNormal">
+          <app-card [cardData]="item"></app-card>
         </div>
       </div>
     </div>
@@ -23,8 +23,8 @@
     <h1 nz-typography>Dificil</h1>
     <div class="cards">
       <div class="cards__list">
-        <div *ngFor="let item of data">
-          <app-card></app-card>
+        <div *ngFor="let item of dataHard">
+          <app-card [cardData]="item"></app-card>
         </div>
       </div>
     </div>

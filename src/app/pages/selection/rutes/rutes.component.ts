@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RutesService } from './rutes.service';
 
 @Component({
   selector: 'app-rutes',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rutes.component.css'],
 })
 export class RutesComponent implements OnInit {
-  data: any = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  public dataEasy: any = [];
+  public dataNormal: any = [];
+  public dataHard: any = [];
+  constructor(private rutesService: RutesService) {}
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  async ngOnInit(): Promise<void> {
+    this.dataEasy = await this.rutesService.getEasyRutes();
+    this.dataNormal = await this.rutesService.getNormalRutes();
+    this.dataHard = await this.rutesService.getHardRutes();
+  }
 }

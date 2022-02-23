@@ -7,7 +7,6 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzRateModule } from 'ng-zorro-antd/rate';
-import { SelectionComponent } from './selection.component';
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
@@ -21,10 +20,15 @@ import { SearchComponent } from './search/search.component';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { RuteDetailComponent } from './rute-detail/rute-detail.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-
+import { GoogleMapsModule } from '@angular/google-maps';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
+import { MyRutesComponent } from './my-rutes/my-rutes.component';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { MapComponent } from '../components/map/map.component';
 @NgModule({
   declarations: [
-    SelectionComponent,
     MainComponent,
     HeaderComponent,
     FooterComponent,
@@ -33,6 +37,10 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     RutesComponent,
     SearchComponent,
     RuteDetailComponent,
+    LoginComponent,
+    RegisterComponent,
+    MyRutesComponent,
+    MapComponent,
   ],
   imports: [
     FormsModule,
@@ -47,6 +55,9 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     NzFormModule,
     NzModalModule,
     NzInputModule,
+    NzDropDownModule,
+    NzLayoutModule,
+    GoogleMapsModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })

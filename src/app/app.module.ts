@@ -18,12 +18,11 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { SelectionModule } from './pages/selection/selection.module';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
+
 registerLocaleData(es);
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,9 +34,9 @@ registerLocaleData(es);
     NzMenuModule,
     NzButtonModule,
     SelectionModule,
-    NzDropDownModule,
     NzModalModule,
     NzFormModule,
+    
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent],

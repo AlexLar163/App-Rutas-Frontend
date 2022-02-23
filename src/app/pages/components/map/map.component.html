@@ -1,0 +1,13 @@
+<div class="route--map">
+  <google-map
+    class="route--map__google"
+    width="100%"
+    [center]="center"
+    [zoom]="zoom"
+  >
+    <map-directions-renderer
+      *ngIf="directionsResults$ | async as directionsResults"
+      [directions]="directionsResults"
+    ></map-directions-renderer
+  ></google-map>
+</div>

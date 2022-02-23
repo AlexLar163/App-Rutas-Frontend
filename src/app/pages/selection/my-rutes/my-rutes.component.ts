@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { MyRutesService } from './my-rutes.service';
 
 @Component({
   selector: 'app-my-rutes',
   templateUrl: './my-rutes.component.html',
-  styleUrls: ['./my-rutes.component.css']
+  styleUrls: ['./my-rutes.component.css'],
 })
 export class MyRutesComponent implements OnInit {
+  public data: any = [];
 
-  constructor() { }
+  constructor(private myRutesService: MyRutesService) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const localData = localStorage.getItem('login');
+    const data = localData && JSON.parse(localData);
+    this.data = await this.myRutesService.getFavoriteRutes(data);
+
   }
-
 }

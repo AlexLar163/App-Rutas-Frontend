@@ -1,1 +1,140 @@
-<p>header works!</p>
+<nz-header class="app--header">
+  <a routerLink="/main">
+    <img class="logo" src="../assets/logo.png" alt="logo.png" />
+  </a>
+  <ul class="header--navbar" nz-menu nzTheme="dark" nzMode="horizontal">
+    <li class="header--navbar__item" nz-menu-item nzMatchRouter nzSelected>
+      <a routerLink="/main">Inicio</a>
+    </li>
+    <li class="header--navbar__item" nz-menu-item nzMatchRouter>
+      <a routerLink="/rutes">Rutas</a>
+    </li>
+    <li class="header--navbar__item" nz-menu-item nzMatchRouter>
+      <a routerLink="/search">Buscar</a>
+    </li>
+    <li
+      class="header--navbar__item"
+      nz-button
+      nzMatchRouter
+      nz-menu-item
+      [hidden]="localExist() === false"
+    >
+      <a routerLink="/myrutes">Mis rutas</a>
+    </li>
+    <li
+      class="header--navbar__item"
+      nz-menu-item
+      [hidden]="localExist() === true"
+      nz-button
+      nz-dropdown
+      [nzDropdownMenu]="menu"
+    >
+      Ingreso
+    </li>
+    <li
+      class="header--navbar__item"
+      nz-menu-item
+      nz-button
+      [hidden]="localExist() === false"
+      (click)="logout()"
+    >
+      <a routerLink="/main">Salir</a>
+    </li>
+  </ul>
+  <nz-dropdown-menu class="dropdown" #menu="nzDropdownMenu">
+    <ul nz-menu class="dropdown--menu">
+      <li class="dropdown--menu__item" nz-menu-item (click)="showModal(1)">
+        Login
+      </li>
+      <li class="dropdown--menu__item" nz-menu-item (click)="showModal(2)">
+        Register
+      </li>
+    </ul>
+  </nz-dropdown-menu>
+</nz-header>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Ingreso"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+>
+  <ng-container *nzModalContent
+    ><div [hidden]="!isLogin">
+      <form nz-form>
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="username">Username</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input
+              nz-input
+              name="userName"
+              type="userName"
+              id="userName"
+              [ngModel]="username"
+              (ngModelChange)="handleUsername($event)"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input
+              nz-input
+              name="password"
+              type="password"
+              id="password"
+              [ngModel]="password"
+              (ngModelChange)="handlePassword($event)"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+    <div [hidden]="!isRegister">
+      <form nz-form class="form">
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="username">Username</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input
+              nz-input
+              name="username"
+              type="username"
+              id="username"
+              [ngModel]="username"
+              (ngModelChange)="handleUsername($event)"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input
+              nz-input
+              name="password"
+              type="password"
+              id="password"
+              [ngModel]="password"
+              (ngModelChange)="handlePassword($event)"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="form--item">
+          <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input
+              nz-input
+              name="email"
+              type="email"
+              id="email"
+              [ngModel]="email"
+              (ngModelChange)="handleEmail($event)"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </ng-container>
+  <div *nzModalFooter>
+    <button nz-button nzType="primary" (click)="handleOk()" routerLink="/main">Ok</button>
+  </div>
+</nz-modal>

@@ -11,6 +11,8 @@
         type="text"
         nz-input
         placeholder="Ingrese palabras clave"
+        [(ngModel)]="searchText"
+        (ngModelChange)="search($event)"
       />
     </nz-input-group>
     <ng-template class="search--input__button" #suffixButton>
@@ -20,9 +22,24 @@
         nzType="primary"
         nzSize="large"
         nzSearch
+        (click)="searchButton()"
       >
         Buscar
       </button>
     </ng-template>
+    <div
+      *ngIf="searchData.length > 0"
+      nz-row
+      [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }"
+    >
+      <div
+        nz-col
+        class="gutter-row results--search"
+        [nzSpan]="6"
+        *ngFor="let item of searchData"
+      >
+        <app-card [cardData]="item"></app-card>
+      </div>
+    </div>
   </div>
 </div>

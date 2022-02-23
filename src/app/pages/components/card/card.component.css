@@ -14,3 +14,27 @@ ng-template > img {
   padding: 0 8px;
   margin-right: 15px;
 }
+.card--rate{
+  padding: 10px;
+  background-color: #4bafe1;
+  border-radius: 10px;
+}
+.asd{}
+.card--cover {
+  width: "100%";
+  height: "250px";
+}
+.card--difficult__easy{
+  background-color: #38ce24;
+}
+.card--difficult__normal{
+  
+  background-color: #4bafe1;
+}
+.card--difficult__hard{
+
+  background-color: #f11212;
+}
+.card--description__text{
+  text-overflow: ellipsis !important;
+}

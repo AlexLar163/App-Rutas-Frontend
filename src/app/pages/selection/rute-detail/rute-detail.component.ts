@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardService } from '../../components/card/card.service';
+import { RuteDetailService } from './rute-detail.service';
 
 @Component({
   selector: 'app-rute-detail',
@@ -15,14 +15,15 @@ export class RuteDetailComponent implements OnInit {
   public duration: number = 0;
   public distance: number = 0;
   public location: string = '';
-  public lat: string = '';
-  public lng: string = '';
-
-  constructor(private serviceCard: CardService) {}
+  public lat: number = 0;
+  public lng: number = 0;
+// cambiar aqui
+  constructor(
+    private ruteDetailService: RuteDetailService
+  ) {}
   ngOnInit(): void {
     const localData = localStorage.getItem('dataCard');
     const data = localData && JSON.parse(localData);
-
     this.name = data.name;
     this.description = data.description;
     this.image = data.image;
@@ -31,7 +32,12 @@ export class RuteDetailComponent implements OnInit {
     this.duration = data.duration;
     this.distance = data.distance;
     this.location = data.location;
-    this.lat = data.lat;
-    this.lng = data.lng;
+    this.lat = parseFloat(data.lat);
+    this.lng = parseFloat(data.lng);
+  }
+  favorite() {
+    const localData = localStorage.getItem('dataCard');
+    const data = localData && JSON.parse(localData);
+    this.ruteDetailService.favorite(data);
   }
 }

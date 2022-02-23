@@ -5,12 +5,11 @@
     </h1>
   </div>
   <h2 nz-typography class="cards__title">Rutas frecuentes</h2>
+  
   <div class="cards">
     <div class="cards__list">
       <div *ngFor="let item of data">
-        <app-card [cardData]="item">
-          
-        </app-card>
+        <app-card [cardData]="item"></app-card>
       </div>
     </div>
   </div>

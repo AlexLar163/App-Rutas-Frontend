@@ -1,1 +1,20 @@
-<p>my-rutes works!</p>
+<div class="rutas">
+  <div class="rutas--grid">
+    <h1 nz-typography class="rutas--title">Mis Rutas</h1>
+    <div
+      *ngIf="data.favorites.length > 0"
+      class="rutas--container"
+      nz-row
+      [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }"
+    >
+      <div
+        nz-col
+        class="gutter-row results--search"
+        [nzSpan]="6"
+        *ngFor="let item of data.favorites"
+      >
+        <app-card [cardData]="item" class="inner-box"></app-card>
+      </div>
+    </div>
+  </div>
+</div>
